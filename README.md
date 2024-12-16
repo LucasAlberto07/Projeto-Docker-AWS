@@ -6,14 +6,14 @@ Este repositório contém os passos necessários para configurar uma aplicação
 
 ## **Requisitos**
 
-- **AWS EC2** (Instância configurada com Ubuntu) etapa atual 
-- **AWS RDS** (Banco de dados MySQL)
-- **AWS EFS** (Elastic File System)
+- **AWS EC2** (Instância configurada com Ubuntu) etapa atual ⏲️
+- **AWS RDS** (Banco de dados MySQL) ❌
+- **AWS EFS** (Elastic File System)  ❌
 - **AWS Load Balancer**
 - **Docker** ou **Containerd** (Dependendo da escolha)
-- **Git** (para versionamento de código)
-- **Script `user_data.sh`** (para automação da inicialização da instância EC2)
-- **WordPress** (Aplicação que será implantada no container)
+- **Git** (para versionamento de código) 
+- **Script `user_data.sh`** (para automação da inicialização da instância EC2) ❌
+- **WordPress** (Aplicação que será implantada no container) ❌
 
 ## **Estrutura do Projeto**
 
