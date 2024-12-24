@@ -2,11 +2,7 @@
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/f/f3/LogoCompasso-positivo.png) 
  
-<img src="https://i.ytimg.com/vi/_nU4OrQ68Us/maxresdefault.jpg" 
-     width="500" 
-     style="display: block; margin: 0 auto;" 
-     alt="Descrição da Imagem" />
-
+![1_RgfvqJOB_oLtwLf8HW9spw](https://github.com/user-attachments/assets/d8346319-d9e8-4506-8bb8-58dbb6d263e8)
 <br>
 
 <p> Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd, integrando RDS (MySQL), EFS para armazenamento estático, e configurando Auto Scaling e Load Balancer para balanceamento de carga. </p>
