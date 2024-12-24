@@ -73,41 +73,55 @@ Tipo	Protocolo	Porta	Tipo de Origem
 Todo tráfego	TCP	Tudo	0.0.0.0/0
 HTTP	TCP	80	Grupo de Segurança da EC2
 
-3º PASSO : Iniciar a Criação da RDS
+# 3º PASSO: Iniciar a Criação da RDS
 
-No painel do RDS, clique em "Create database".
-Escolha as configurações de banco de dados:
-Engine options:
-Escolha MySQL (ou outro banco disponível no Free Tier, como PostgreSQL).
-Templates:
-Selecione Free tier.
-Para criar uma RDS no AWS Free Tier, siga este guia passo a passo. Certifique-se de que sua conta AWS está configurada para o plano gratuito.
+## 1. Criar o Banco de Dados
+1. No painel do RDS, clique em **"Create database"**.
+2. Escolha as configurações de banco de dados:
+   - **Engine options**: Escolha **MySQL** (ou outro banco disponível no Free Tier, como PostgreSQL).
+   - **Templates**: Selecione **Free tier**.
 
- Configurar a Instância do Banco
+---
 
-Settings:
-DB instance identifier: Nome da sua instância (ex.: meubanco).
-Master username: Escolha um nome de usuário (ex.: admin).
-Master password: Defina uma senha forte e confirme.
-DB instance size:
-Escolha a classe de instância db.t2.micro ou db.t3.micro (ambas gratuitas no Free Tier).
-Storage:
-Tipo de armazenamento: General Purpose (SSD).
-Tamanho de armazenamento: 20 GB (máximo permitido no Free Tier).
+## 2. Configurar a Instância do Banco
+### **Settings**
+- **DB instance identifier**: Nome da sua instância (ex.: `meubanco`).
+- **Master username**: Escolha um nome de usuário (ex.: `admin`).
+- **Master password**: Defina uma senha forte e confirme.
 
-Configurações de Conectividade
-Virtual Private Cloud (VPC):
-Escolha a VPC padrão ou configure uma VPC específica.
-Subnet group:
-Use um grupo de sub-rede existente ou crie um novo.
-Public access:
-Marque Yes se deseja que o banco seja acessado publicamente (recomendado apenas para teste).
-VPC security group:
-Configure ou selecione um Security Group para permitir acesso na porta 3306.
+### **DB Instance Size**
+- Escolha a classe de instância: **db.t2.micro** ou **db.t3.micro** (ambas gratuitas no Free Tier).
 
-Revisar e Criar
-Revise todas as configurações e clique em "Create database".
-Aguarde a criação (isso pode levar alguns minutos).
+### **Storage**
+- **Tipo de armazenamento**: General Purpose (SSD).
+- **Tamanho de armazenamento**: **20 GB** (máximo permitido no Free Tier).
+
+---
+
+## 3. Configurações de Conectividade
+### **Virtual Private Cloud (VPC)**
+- Escolha a VPC padrão ou configure uma VPC específica.
+
+### **Subnet Group**
+- Use um grupo de sub-rede existente ou crie um novo.
+
+### **Public Access**
+- Marque **Yes** se deseja que o banco seja acessado publicamente (recomendado apenas para testes).
+
+### **VPC Security Group**
+- Configure ou selecione um **Security Group** para permitir acesso na porta **3306**.
+
+---
+
+## 4. Revisar e Criar
+1. Revise todas as configurações realizadas.
+2. Clique em **"Create database"**.
+3. Aguarde a criação do banco de dados (o processo pode levar alguns minutos).
+
+---
+
+Agora, sua instância RDS está pronta e configurada para uso no Free Tier. 🚀
+
 
 ![RDS WORDPREES](https://github.com/user-attachments/assets/bf26fb8b-6008-45ca-aa90-cdaab136560e)
 
