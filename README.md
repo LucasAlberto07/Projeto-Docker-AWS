@@ -6,9 +6,11 @@
 
 <br>
 <br>
+<br>
 
 <p>Este guia apresenta a implantação do WordPress em EC2 com Docker/Containerd, integrando RDS (MySQL), EFS para armazenamento, e configurando Auto Scaling e Classic Load Balancer. O projeto foi solicitado pela <strong>Compass UOL</strong>, garantindo escalabilidade e alta disponibilidade para a aplicação.</p>
 
+<br>
 <br>
 <br>
 
@@ -40,7 +42,9 @@
 
 ### **1 - Acessar sua conta da AWS (Se não tiver conta, criar conta) :**
 
-![Capturar](https://github.com/user-attachments/assets/09a2e88b-c3ba-4b29-843a-67856165edcf)
+![Capturar](https://github.com/user-attachments/assets/1855f8bd-1386-4b2a-b68b-2b61dc051402)
+
+
 
 <p>
     <a href="https://us-east-2.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=j2zjHrNfWOzFRccugZMeGP7GVoV-z8vQ3VHeb6g0LM0&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-2_9c1e7907d450bff9" target="_blank" style="text-decoration: none; color: inherit;">
@@ -63,8 +67,16 @@
 
 ### **2 - No console da AWS depois de acessado vamos iniciar criando nossa VPC :**
 
+<br>
 
-<p></p>
+![Capturar](https://github.com/user-attachments/assets/56888482-c7dd-427f-bb3e-1826e14a3238)
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/5ca425b3-8c10-4032-aae2-cc34ec6155d3)
+
+
+
 
 1º PASSO - CRIAÇÃO DA VPC 
 - Criar VPC e suas Sub-Redes (2 Publicas e 2 Privadas)
