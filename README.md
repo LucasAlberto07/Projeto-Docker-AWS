@@ -210,6 +210,63 @@ mount -t nfs4 -o nfsvers=4.1 <EFS-DNS-NAME>:/ /mnt/efs
 # Montar automaticamente na inicialização
 echo "<EFS-DNS-NAME>:/ /mnt/efs nfs4 defaults,_netdev 0 0" >> /etc/fstab
 ```
+# 4. Configuração do Serviço de Load Balancer AWS para WordPress
+
+## 1. Criar o Load Balancer
+1. Acesse o painel **EC2** no console AWS.
+2. No menu lateral, clique em **"Load Balancers"** e depois em **"Create Load Balancer"**.
+3. Escolha o tipo **Classic Load Balancer**.
+
+---
+
+## 2. Configurar o Load Balancer
+1. **Name**: Defina um nome (ex.: `wordpress-lb`).
+2. **Scheme**: Escolha **"Internet-facing"** (voltado para a Internet).
+3. **Network**:
+   - **VPC**: Selecione a VPC configurada anteriormente.
+   - **Subnets**: Escolha as sub-redes públicas.
+4. **Listeners**:
+   - Configure uma regra de escuta para HTTP na porta **80**.
+
+---
+
+## 3. Configurar os Grupos de Segurança
+1. Associe o **Security Group** do Load Balancer.
+   - **Entrada**: Permita HTTP (porta 80) de **0.0.0.0/0**.
+   - **Saída**: Permita HTTP para o **Security Group da EC2**.
+
+---
+
+## 4. Configurar Verificações de Integridade
+1. Defina o caminho de verificação:
+   - Utilize um dos seguintes endpoints do WordPress:
+     - `/wp-admin/install.php`
+     - `/wp-login.php`
+     - `/wp-admin/index.php`
+2. Configure os tempos:
+   - Intervalo: **30 segundos**.
+   - Timeout: **5 segundos**.
+   - Tentativas não aprovadas: **3**.
+   - Tentativas aprovadas: **2**.
+
+---
+
+## 5. Registrar Instâncias
+1. Adicione as instâncias **EC2** criadas anteriormente ao Load Balancer.
+2. Confirme que as instâncias estão em estado **Healthy** após as verificações de integridade.
+
+---
+
+## 6. Obter o DNS do Load Balancer
+1. Após a criação, copie o **DNS Name** do Load Balancer.
+2. Use este DNS para acessar o WordPress:
+   - Acesse: `http://<DNS_DO_LOAD_BALANCER>`
+
+---
+
+Agora o **WordPress** está configurado com um Load Balancer, garantindo alta disponibilidade e distribuindo o tráfego de forma eficiente entre as instâncias EC2. 🚀
+![loadbalencer](https://github.com/user-attachments/assets/1276c919-24dd-423f-83ed-dd48cdad30cd)
+
 
 ### 4. **Configurar o Docker para WordPress com MySQL**
 
