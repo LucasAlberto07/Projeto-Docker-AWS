@@ -32,35 +32,35 @@
 <br>
 <br>
 
-<h2>**Técnologias utilizadas no laboratório**</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-  <div style="text-align: center;">
+<h2><strong>Iniciando laboratório</strong></h2>
+<div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
+  <div style="text-align: center; margin: 10px;">
     <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="50">
-    <p><strong>AWS EC2</strong><br>Instância configurada com Ubuntu</p>
+    <p><strong>AWS EC2</strong></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; margin: 10px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="50">
-    <p><strong>AWS RDS</strong><br>Banco de dados MySQL</p>
+    <p><strong>AWS RDS</strong></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; margin: 10px;">
     <img src="https://seeklogo.com/images/A/amazon-elastic-file-system-logo-E7053CDC9F-seeklogo.com.png" alt="AWS EFS" width="50">
-    <p><strong>AWS EFS</strong><br>Elastic File System</p>
+    <p><strong>AWS EFS</strong></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; margin: 10px;">
     <img src="https://github.com/user-attachments/assets/4877e7d9-1167-47be-8527-f9c10427da9c" alt="AWS Load Balancer" width="50">
-    <p><strong>AWS Load Balancer</strong><br>Balanceamento de carga</p>
+    <p><strong>AWS Load Balancer</strong></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; margin: 10px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="50">
-    <p><strong>Docker</strong> ou <strong>Containerd</strong><br>Gerenciamento de containers</p>
+    <p><strong>Docker</strong></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; margin: 10px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="50">
-    <p><strong>Script `user_data.sh`</strong><br>Automação da inicialização da instância EC2</p>
+    <p><strong>Script user_data.sh</strong></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; margin: 10px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" width="50">
-    <p><strong>WordPress</strong><br>Aplicação implantada no container</p>
+    <p><strong>WordPress</strong></p>
   </div>
 </div>
 
