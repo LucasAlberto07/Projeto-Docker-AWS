@@ -152,6 +152,7 @@ Agora, sua instância RDS está pronta e configurada para uso no Free Tier. 🚀
    ```bash
    sudo mkdir -p /var/www/html
    sudo mount -t nfs4 <DNS_DO_EFS>:/ /var/www/html
+![wordprees-efs](https://github.com/user-attachments/assets/67e1f530-6f64-4070-8182-cc6c8fae5750)
 
 
 ## **Passo a Passo para Configuração**
