@@ -25,21 +25,45 @@
 <br>
 <br>
 
-## **Arquitetura solicitada para laboratório**
+## **Desenho da arquitetetura para laboratório**
 
 ![68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a313035302f302a6f6339746838696c7575336d6d6338542e706e67](https://github.com/user-attachments/assets/f807b228-4285-4ee4-9375-6647f78aed46)
 
-## **Estrutura do Projeto**
+<br>
+<br>
 
-``` ![estrutura](https://github.com/user-attachments/assets/b526dedb-c2b7-44e7-9adb-7e6b11f5e19f)
+<h2>**Técnologias utilizadas no laboratório**</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+  <div style="text-align: center;">
+    <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="50">
+    <p><strong>AWS EC2</strong><br>Instância configurada com Ubuntu</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="50">
+    <p><strong>AWS RDS</strong><br>Banco de dados MySQL</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://seeklogo.com/images/A/amazon-elastic-file-system-logo-E7053CDC9F-seeklogo.com.png" alt="AWS EFS" width="50">
+    <p><strong>AWS EFS</strong><br>Elastic File System</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://github.com/user-attachments/assets/4877e7d9-1167-47be-8527-f9c10427da9c" alt="AWS Load Balancer" width="50">
+    <p><strong>AWS Load Balancer</strong><br>Balanceamento de carga</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="50">
+    <p><strong>Docker</strong> ou <strong>Containerd</strong><br>Gerenciamento de containers</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="50">
+    <p><strong>Script `user_data.sh`</strong><br>Automação da inicialização da instância EC2</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" width="50">
+    <p><strong>WordPress</strong><br>Aplicação implantada no container</p>
+  </div>
+</div>
 
-.
-├── docker-compose.yml       # Arquivo de configuração do Docker Compose
-├── Dockerfile               # Arquivo de configuração do Docker (se necessário)
-├── user_data.sh            # Script de inicialização da instância EC2 (user data)
-├── README.md               # Documentação do projeto
-└── wordpress/               # Código do WordPress ou repositório do WordPress
-```
 
 
 1º PASSO - CRIAÇÃO DA VPC 
