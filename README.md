@@ -1,10 +1,14 @@
-# COMPASS WORDPRESS AWS 
+# AWS Site Wordpress 
+
+<br>
+ 
+![https://i.ytimg.com/vi/_nU4OrQ68Us/maxresdefault.jpg](https://i.ytimg.com/vi/_nU4OrQ68Us/maxresdefault.jpg)
 
 <br>
 
-Implantação do WordPress com Docker/Containerd, RDS, EFS, Auto Scalling e Load Balancer
+Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd, integrando RDS (MySQL), EFS para armazenamento estático, e configurando Auto Scaling e Load Balancer para balanceamento de carga.
 
-Este repositório contém os passos necessários para configurar uma aplicação WordPress em uma instância EC2 utilizando Docker/Containerd, integrando com o RDS (MySQL), EFS para armazenamento estático e configurando um Load Balancer para balanceamento de carga.
+![alt text](https://miro.medium.com/v2/resize:fit:1050/0*oc9th8iluu3mmc8T.png)
 
 
 ## **Requisitos**
@@ -16,7 +20,7 @@ Este repositório contém os passos necessários para configurar uma aplicação
 - **Docker** ou **Containerd** (Dependendo da escolha)
 - **Script `user_data.sh`** (para automação da inicialização da instância EC2) 
 - **WordPress** (Aplicação que será implantada no container) 
-![estrutura](https://github.com/user-attachments/assets/e26ce0d3-e85d-42cc-8cab-fb530cd067de)
+
 
 
 
