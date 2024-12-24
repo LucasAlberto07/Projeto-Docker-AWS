@@ -125,14 +125,33 @@ Agora, sua instância RDS está pronta e configurada para uso no Free Tier. 🚀
 
 ![RDS WORDPREES](https://github.com/user-attachments/assets/bf26fb8b-6008-45ca-aa90-cdaab136560e)
 
+# 3. Configuração do Serviço EFS AWS para Arquivos Estáticos do WordPress
 
+## 1. Criar o EFS
+1. Acesse o painel **Amazon EFS** no console AWS.
+2. Clique em **"Create file system"**.
+3. Configure o sistema de arquivos:
+   - **VPC**: Escolha a VPC configurada anteriormente.
+   - **Subnets**: Selecione as sub-redes privadas.
+   - **Security Group**: Associe o Security Group configurado para o EFS.
+4. Finalize a criação clicando em **"Create"**.
 
+---
 
+## 2. Configurar o Ponto de Montagem
+1. Após a criação, copie o **Endpoint DNS** do EFS.
+2. Configure um ponto de acesso:
+   - Crie o diretório `/wordpress`.
+   - Configure permissões adequadas para leitura e gravação.
 
+---
 
-
-
-
+## 3. Montar o EFS na Instância EC2
+1. Conecte-se à instância EC2 .
+2. Monte o EFS:
+   ```bash
+   sudo mkdir -p /var/www/html
+   sudo mount -t nfs4 <DNS_DO_EFS>:/ /var/www/html
 
 
 ## **Passo a Passo para Configuração**
