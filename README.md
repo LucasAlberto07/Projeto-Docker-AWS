@@ -70,7 +70,7 @@
 <br>
 
 <div style="border: 1px solid #ffa500; background-color: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px;">
-    ⚠️ <strong>Atenção ao criar VPC :</strong> Mudar somente o que foi informado abaixo, se não tiver, seguir deixando (PADRÃO) como está.
+    ⚠️ <strong>Importante ao configurar a VPC:</strong> Altere apenas os parâmetros especificados abaixo. Para os demais, mantenha as configurações padrão.
 </div>
 
 <br>
@@ -111,49 +111,25 @@
 ![Capturar](https://github.com/user-attachments/assets/50b9e174-7533-48a6-9775-0aee0d97f086)
 
 
-1º PASSO - CRIAÇÃO DA VPC 
-- Criar VPC e suas Sub-Redes (2 Publicas e 2 Privadas)
-  Instalar as sub-redes em Gateways
+<br>
 
-- Criar tabelas de rotas e associar as sub-redes
+<div style="border: 1px solid #4CAF50; background-color: #e8f5e9; padding: 10px; border-radius: 5px; margin-top: 10px;">
+    ✅ <strong>Agora com todos os passos informados:</strong> você pode criar sua VPC com segurança e conforme as orientações fornecidas.
+</div>
 
-![vpc subnetes ](https://github.com/user-attachments/assets/aa3df51c-1ddd-4616-88a7-12c89e72a21c)
+<br>
 
-2º PASSO - Grupos de Segurança 
-Criar 4 grupos de seguranças (EC2/RDS/LOAD/EFS)
+<div style="border: 1px solid #4CAF50; background-color: #e8f5e9; padding: 10px; border-radius: 5px; margin-top: 10px;">
+    ✅ <strong>Agora pode seguir o próximo passo a passo.
+</div>
 
-Para o EC2:
-Entrada
 
-Tipo	Protocolo	Porta	Tipo de Origem
-HTTP	TCP	80	Grupo de Segurança do Load Balancer
-SSH	TCP	22	IP
-Saída
-
-Tipo	Protocolo	Porta	Tipo de Origem
-Todo tráfego	Todos	Tudo	0.0.0.0/0
-MySQL/Aurora	TCP	2206	Grupo de Segurança da RDS
-NFS	TCP	2049	Grupo de Segurança da EFS
-Para o RDS MySql:
-Entrada
-
-Tipo	Protocolo	Porta	Tipo de Origem
-MySql/Aurora	TCP	3306	Grupo de Segurança da EC2
-Para o EFS:
-Entrada
-
-Tipo	Protocolo	Porta	Tipo de Origem
-NFS	TCP	2049	Grupo de Segurança da EC2
-Para o LoadBalancer:
-Entrada
-
-Tipo	Protocolo	Porta	Tipo de Origem
-HTTP	TCP	80	0.0.0.0/0
-Saída
-
-Tipo	Protocolo	Porta	Tipo de Origem
-Todo tráfego	TCP	Tudo	0.0.0.0/0
-HTTP	TCP	80	Grupo de Segurança da EC2
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 # 3º PASSO: Iniciar a Criação da RDS
 
