@@ -1,6 +1,8 @@
-## COMPASS WORDPRESS AWS 
+# COMPASS WORDPRESS AWS 
 
-## Deploy de Aplicação WordPress com Docker/Containerd, RDS, EFS e Load Balancer**
+<br>
+
+Implantação do WordPress com Docker/Containerd, RDS, EFS, Auto Scalling e Load Balancer
 
 Este repositório contém os passos necessários para configurar uma aplicação WordPress em uma instância EC2 utilizando Docker/Containerd, integrando com o RDS (MySQL), EFS para armazenamento estático e configurando um Load Balancer para balanceamento de carga.
 
