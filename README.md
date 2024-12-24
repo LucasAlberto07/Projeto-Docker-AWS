@@ -285,4 +285,81 @@ echo "<EFS-DNS-NAME>:/ /mnt/efs nfs4 defaults,_netdev 0 0" >> /etc/fstab
 Agora o **WordPress** está configurado com um Load Balancer, garantindo alta disponibilidade e distribuindo o tráfego de forma eficiente entre as instâncias EC2. 🚀
 
 ---
+# 5º PASSO - Criar Instância EC2 ☁️
+
+## Introdução
+Para criar a infraestrutura de aplicação WordPress, vamos iniciar com a criação de uma **Instância EC2** na AWS. Essa instância executará o WordPress e será configurada com o Docker e Docker Compose para facilitar o gerenciamento dos containers.
+
+## Passo a Passo para Criar e Configurar a Instância EC2
+
+### 1. **Abrir o painel da EC2**
+- Acesse o painel da **EC2** no console da AWS.
+- Clique em **Executar instância**.
+
+### 2. **Configuração da Instância**
+
+#### **Tags**
+- Atribua as tags de identificação necessárias (exemplo: `Name = WordPress-Instance`).
+
+#### **Tipo de Instância**
+- Selecione **Free Tier** (t2.micro).
+
+#### **AMI (Amazon Machine Image)**
+- Escolha a **Amazon Linux 2023**.
+
+#### **VPC**
+- Use a **VPC** criada anteriormente.
+
+#### **User Data**
+- Insira o seguinte script no campo **User Data** para configurar a instância:
+
+```bash
+#!/bin/bash 
+
+# Atualizando o sistema
+sudo yum update -y 
+
+# Instalando o Docker
+sudo yum install docker -y 
+
+# Iniciando o serviço Docker
+sudo systemctl start docker
+
+# Habilitando o Docker para iniciar automaticamente
+sudo systemctl enable docker
+
+# Adicionando o usuário ao grupo Docker
+sudo usermod -aG docker ec2-user
+newgrp docker
+
+# Baixando e instalando o Docker Compose
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Criando diretório para o WordPress
+sudo mkdir /home/ec2-user/wordpress
+
+# Criando o arquivo docker-compose.yml
+cat <<EOF > /home/ec2-user/wordpress/docker-compose.yml
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: database-1.chc4e66surqu.us-east-1.rds.amazonaws.com:3306
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: 12345678lucas
+      WORDPRESS_DB_NAME: bancoaws
+    volumes:
+      - /mnt/efs:/var/www/html
+EOF
+
+# Montando o sistema de arquivos EFS
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-034132b3f8de6bd56.efs.us-east-1.amazonaws.com:/ /mnt/efs
+
+# Inicializando o container WordPress
+docker-compose -f /home/ec2-user/wordpress/docker-compose.yml up -d
+
 
