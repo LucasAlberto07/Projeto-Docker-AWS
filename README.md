@@ -4,8 +4,6 @@
 
 Este repositório contém os passos necessários para configurar uma aplicação WordPress em uma instância EC2 utilizando Docker/Containerd, integrando com o RDS (MySQL), EFS para armazenamento estático e configurando um Load Balancer para balanceamento de carga.
 
-![estrutura](https://github.com/user-attachments/assets/0ba40364-6606-423f-8cbf-ff8f61fdf97b)
-
 
 ## **Requisitos**
 
@@ -16,6 +14,9 @@ Este repositório contém os passos necessários para configurar uma aplicação
 - **Docker** ou **Containerd** (Dependendo da escolha)
 - **Script `user_data.sh`** (para automação da inicialização da instância EC2) 
 - **WordPress** (Aplicação que será implantada no container) 
+![estrutura](https://github.com/user-attachments/assets/e26ce0d3-e85d-42cc-8cab-fb530cd067de)
+
+
 
 ## **Estrutura do Projeto**
 
