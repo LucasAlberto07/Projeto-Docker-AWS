@@ -43,8 +43,8 @@ Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd
 
 ![vpc subnetes ](https://github.com/user-attachments/assets/aa3df51c-1ddd-4616-88a7-12c89e72a21c)
 
-2 º PASSO
-Para o EC2:
+2º PASSO 
+
 # Configuração de Grupos de Segurança 🔐
 
 ## Introdução
