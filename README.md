@@ -5,12 +5,14 @@
 ![1_RgfvqJOB_oLtwLf8HW9spw](https://github.com/user-attachments/assets/d8346319-d9e8-4506-8bb8-58dbb6d263e8)
 
 <br>
+<br>
 
-<p> Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd, integrando RDS (MySQL), EFS para armazenamento estático, e configurando Auto Scaling e Load Balancer para balanceamento de carga. </p>
+<p>Este guia apresenta a implantação do WordPress em EC2 com Docker/Containerd, integrando RDS (MySQL), EFS para armazenamento, e configurando Auto Scaling e Classic Load Balancer. O projeto foi solicitado pela <strong>Compass UOL</strong>, garantindo escalabilidade e alta disponibilidade para a aplicação.</p>
 
-![68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a313035302f302a6f6339746838696c7575336d6d6338542e706e67](https://github.com/user-attachments/assets/f807b228-4285-4ee4-9375-6647f78aed46)
+<br>
+<br>
 
-## **Requisitos**
+## **Técnologias utilizadas no laboratório**
 
 - <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="20"/> **AWS EC2** (Instância configurada com Ubuntu)
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="20"/> **AWS RDS** (Banco de dados MySQL)
@@ -20,8 +22,12 @@
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="20"/> **Script `user_data.sh`** (para automação da inicialização da instância EC2)
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" width="20"/> **WordPress** (Aplicação que será implantada no container)
 
+<br>
+<br>
 
+## **Arquitetura solicitada para laboratório**
 
+![68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a313035302f302a6f6339746838696c7575336d6d6338542e706e67](https://github.com/user-attachments/assets/f807b228-4285-4ee4-9375-6647f78aed46)
 
 ## **Estrutura do Projeto**
 
@@ -34,6 +40,8 @@
 ├── README.md               # Documentação do projeto
 └── wordpress/               # Código do WordPress ou repositório do WordPress
 ```
+
+
 1º PASSO - CRIAÇÃO DA VPC 
 - Criar VPC e suas Sub-Redes (2 Publicas e 2 Privadas)
   Instalar as sub-redes em Gateways
