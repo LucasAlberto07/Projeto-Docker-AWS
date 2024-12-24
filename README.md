@@ -32,7 +32,7 @@
 <br>
 <br>
 
-<h2><strong>Iniciando laboratório</strong></h2>
+<h2><strong>Tecnologias utilizadas no laboratório</strong></h2>
 <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
   <div style="text-align: center; margin: 10px;">
     <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="50">
