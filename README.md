@@ -43,50 +43,34 @@ Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd
 
 ![vpc subnetes ](https://github.com/user-attachments/assets/aa3df51c-1ddd-4616-88a7-12c89e72a21c)
 
-2º PASSO 
+## Etapa 2: Configurando Regras de Acesso (Grupos de Segurança)
+Grupo Público, entradas permitidas:
 
-# Configuração de Grupos de Segurança 🔐
+> HTTP (porta 80) de qualquer origem (0.0.0.0/0).
+> 
+> HTTPS (porta 443) de qualquer origem (0.0.0.0/0).
+>
+> SSH (porta 22) de qualquer origem (0.0.0.0/0).
 
-## Introdução
-Os Grupos de Segurança são usados para controlar o tráfego de rede que entra e sai dos recursos da AWS. Abaixo estão as configurações de **Grupo Público** e **Grupo Privado** necessários para a infraestrutura.
 
----
+Saídas permitidas:
+>Todo o tráfego, sem restrição de portas ou protocolos.
 
-## Grupo Público
-Este grupo controla o tráfego de entrada para recursos públicos e permite tráfego de saída irrestrito.
 
-### **Regras de Entrada**
-| Tipo       | Protocolo | Porta | Origem       |
-|------------|-----------|-------|--------------|
-| Entrada    | TCP       | 80    | 0.0.0.0/0    |
-| Entrada    | TCP       | 443   | 0.0.0.0/0    |
-| Entrada    | TCP       | 22    | 0.0.0.0/0    |
 
-### **Regras de Saída**
-| Tipo       | Protocolo | Porta | Destino      |
-|------------|-----------|-------|--------------|
-| Saída      | -         | -     | Todo o tráfego permitido |
 
----
+Grupo Privado, entradas permitidas:
+  
+> MySQL (porta 3306) de qualquer origem.
+>
+> HTTP (porta 80) e HTTPS (porta 443) apenas do grupo público.
+>
+>  SSH (porta 22) de qualquer origem.
+>
+> NFS (porta 2049) de qualquer origem.
 
-## Grupo Privado
-Este grupo controla o tráfego de entrada e saída para recursos privados da infraestrutura, como bancos de dados e sistemas internos.
-
-### **Regras de Entrada**
-| Tipo       | Protocolo | Porta | Origem       |
-|------------|-----------|-------|--------------|
-| Entrada    | TCP       | 3306  | 0.0.0.0/0    |
-| Entrada    | TCP       | 22    | 0.0.0.0/0    |
-| Entrada    | TCP       | 2049  | 0.0.0.0/0    |
-| Entrada    | TCP       | 443   | Grupo Público |
-| Entrada    | TCP       | 80    | Grupo Público |
-
-### **Regras de Saída**
-| Tipo       | Protocolo | Porta | Destino      |
-|------------|-----------|-------|--------------|
-| Saída      | -         | -     | Todo o tráfego permitido |
-
----
+Saídas permitidas:
+> Todo o tráfego liberado.
 
 # 3º PASSO: Iniciar a Criação da RDS
 
