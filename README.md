@@ -151,11 +151,9 @@ Agora, sua instância RDS está pronta e configurada para uso no Free Tier. 🚀
    ```bash
    sudo mkdir -p /var/www/html
    sudo mount -t nfs4 <DNS_DO_EFS>:/ /var/www/html
+
 ![wordprees-efs](https://github.com/user-attachments/assets/67e1f530-6f64-4070-8182-cc6c8fae5750)
 
-
-
-```
 # 4. Configuração do Serviço de Load Balancer AWS para WordPress
 
 ## 1. Criar o Load Balancer
@@ -210,14 +208,12 @@ Agora, sua instância RDS está pronta e configurada para uso no Free Tier. 🚀
 
 ---
 
-
-
-
 ![loadbalencer](https://github.com/user-attachments/assets/1276c919-24dd-423f-83ed-dd48cdad30cd)
 
 Agora o **WordPress** está configurado com um Load Balancer, garantindo alta disponibilidade e distribuindo o tráfego de forma eficiente entre as instâncias EC2. 🚀
 
 ---
+
 # 5º PASSO - Criar Instância EC2 ☁️
 
 ## Introdução
@@ -247,13 +243,13 @@ Para criar a infraestrutura de aplicação WordPress, vamos iniciar com a criaç
 - Insira o seguinte script no campo **User Data** para configurar a instância:
 
 ```bash
-#!/bin/bash 
+#!/bin/bash
 
 # Atualizando o sistema
-sudo yum update -y 
+sudo yum update -y
 
 # Instalando o Docker
-sudo yum install docker -y 
+sudo yum install docker -y
 
 # Iniciando o serviço Docker
 sudo systemctl start docker
@@ -294,5 +290,4 @@ sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,ret
 
 # Inicializando o container WordPress
 docker-compose -f /home/ec2-user/wordpress/docker-compose.yml up -d
-
 
