@@ -35,8 +35,10 @@
 ## **Aplicando Laboratório (Vamos iniciar?)**
 
 <br>
+<br>
+<br>
 
-### **Acessar sua conta da AWS (Se não tiver conta, criar conta) :**
+### **1 - Acessar sua conta da AWS (Se não tiver conta, criar conta) :**
 
 ![Capturar](https://github.com/user-attachments/assets/09a2e88b-c3ba-4b29-843a-67856165edcf)
 
@@ -54,9 +56,12 @@
 </p>
 
 
+<br>
+<br>
+<br>
 
 
-### **Criar VPC :**
+### **2 - No console da AWS depois de acessado vamos iniciar criando nossa VPC :**
 
 
 <p></p>
