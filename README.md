@@ -112,6 +112,7 @@
 
 
 <br>
+<br>
 
 <div style="border: 1px solid #4CAF50; background-color: #e8f5e9; padding: 10px; border-radius: 5px; margin-top: 10px;">
     ✅ <strong>Agora com todos os passos informados:</strong> você pode criar sua VPC com segurança e conforme as orientações fornecidas.
@@ -126,6 +127,11 @@
 
 <br>
 <br>
+
+<hr>
+
+
+
 <br>
 <br>
 <br>
