@@ -80,7 +80,7 @@
 
 <br>
 
-### **➡️ Clicar em (VPC and More)**
+#### **➡️ Clicar em (VPC and More)**
 
 <br>
 
@@ -88,7 +88,7 @@
 
 <br>
 
-### **➡️ Colocar o nome desejado que quiser**
+#### **➡️ Colocar o nome desejado que quiser**
 
 <br>
 
@@ -96,7 +96,7 @@
 
 <br>
 
-### **➡️ Deixar este CIDR Block**
+#### **➡️ Deixar este CIDR Block**
 
 <br>
 
@@ -104,7 +104,7 @@
 
 <br>
 
-### **➡️ Vamos aproveitar que estamos criando a VPC e vamos subir junto (1) um Gateway Nat**
+#### **➡️ Vamos aproveitar que estamos criando a VPC e vamos subir junto (1) um Gateway Nat**
 
 <br>
 
@@ -130,12 +130,73 @@
 
 <hr>
 
+<br>
+<br>
+
+### **3 - Agora que criamos e finalizamos a VPC com sucesso agora precisamos criar nossos security groups :**
+
+<br>
+
+#### **➡️ Vamos acessar novamente o serviço da VPC e do lado esquerdo tem a opção security groups**
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/38485065-5915-4f48-abcc-833e44aeffa1)
+
+<br>
+
+#### **➡️ Agora vamos clicar para criar novos securitys groups, vamos criar duas, uma para usarmos tudo o que for privado e um security group para tudo publico**
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/95d22609-cd7b-4d34-9b3d-b95c4d0b8e1d)
+
+<br>
+<br>
+
+<div style="border: 1px solid #ffa500; background-color: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px;">
+    ⚠️ <strong>Importante ao configurar o Security Group:</strong> Altere apenas os parâmetros especificados abaixo. Para os demais, mantenha as configurações padrão.
+</div>
+
+<br>
+<br>
+
+<div style="border: 1px solid #ffa500; background-color: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px;">
+    ⚠️ <strong>Nesse passo VOCÊ deve escolher a VPC que você criou no passo anterior.
+</div>
+
+<br>
+<br>
+
+#### **➡️ Abaixo vamos criar (2x) duas vezes, primeiro vamos criar o security group (PRIVADO)**
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/cb20c45d-9da9-4eb9-a91e-ce1a4fa99d9b)
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/0f357787-a471-4568-a5c0-e65ba7aa190e)
+
+<br>
+<br>
+
+#### **➡️ Agora vamos criar o segundo security group (PUBLICO 🌍)**
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/bdf6e973-9d1f-4286-8d84-9a0ca43a3570)
 
 
+
+
+
 <br>
 <br>
 <br>
 <br>
+
+
 
 # 3º PASSO: Iniciar a Criação da RDS
 
