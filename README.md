@@ -3,6 +3,7 @@
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/f/f3/LogoCompasso-positivo.png) 
  
 ![1_RgfvqJOB_oLtwLf8HW9spw](https://github.com/user-attachments/assets/d8346319-d9e8-4506-8bb8-58dbb6d263e8)
+
 <br>
 
 <p> Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd, integrando RDS (MySQL), EFS para armazenamento estático, e configurando Auto Scaling e Load Balancer para balanceamento de carga. </p>
@@ -11,14 +12,13 @@
 
 ## **Requisitos**
 
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/aws.svg" alt="AWS" width="20"/> **AWS EC2** (Instância configurada com Ubuntu)
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/aws.svg" alt="AWS" width="20"/> **AWS RDS** (Banco de dados MySQL)
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/aws.svg" alt="AWS" width="20"/> **AWS EFS** (Elastic File System)
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/aws.svg" alt="AWS" width="20"/> **AWS Load Balancer**
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/docker.svg" alt="Docker" width="20"/> **Docker** ou <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/containerd.svg" alt="Containerd" width="20"/> **Containerd** (Dependendo da escolha)
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/gnubash.svg" alt="Bash" width="20"/> **Script `user_data.sh`** (para automação da inicialização da instância EC2)
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/wordpress.svg" alt="WordPress" width="20"/> **WordPress** (Aplicação que será implantada no container)
-
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS EC2" width="20"/> **AWS EC2** (Instância configurada com Ubuntu)
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="20"/> **AWS RDS** (Banco de dados MySQL)
+- <img src="https://seeklogo.com/images/A/amazon-elastic-file-system-logo-E7053CDC9F-seeklogo.com.png" alt="AWS EFS" width="20"/> **AWS EFS** (Elastic File System)
+- <img src="https://github.com/user-attachments/assets/4877e7d9-1167-47be-8527-f9c10427da9c" alt="AWS Load Balancer" width="20"/> **AWS Load Balancer**
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="20"/> **Docker** ou <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain-wordmark.svg" alt="Containerd" width="20"/> **Containerd** (Dependendo da escolha)
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="20"/> **Script `user_data.sh`** (para automação da inicialização da instância EC2)
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" width="20"/> **WordPress** (Aplicação que será implantada no container)
 
 
 
