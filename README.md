@@ -12,7 +12,7 @@
 
 ## **Requisitos**
 
-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS EC2" width="20"/> **AWS EC2** (Instância configurada com Ubuntu)
+- <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="20"/> **AWS EC2** (Instância configurada com Ubuntu)
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="20"/> **AWS RDS** (Banco de dados MySQL)
 - <img src="https://seeklogo.com/images/A/amazon-elastic-file-system-logo-E7053CDC9F-seeklogo.com.png" alt="AWS EFS" width="20"/> **AWS EFS** (Elastic File System)
 - <img src="https://github.com/user-attachments/assets/4877e7d9-1167-47be-8527-f9c10427da9c" alt="AWS Load Balancer" width="20"/> **AWS Load Balancer**
