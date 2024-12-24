@@ -154,60 +154,7 @@ Agora, sua instância RDS está pronta e configurada para uso no Free Tier. 🚀
 ![wordprees-efs](https://github.com/user-attachments/assets/67e1f530-6f64-4070-8182-cc6c8fae5750)
 
 
-## **Passo a Passo para Configuração**
 
-### 1. **Instalar e Configurar o Docker/Containerd na Instância EC2**
-
-Você pode usar o script `user_data.sh` para automatizar a instalação do Docker ou Containerd ao iniciar a instância EC2.
-
-#### Exemplo de script `user_data.sh`:
-
-```bash
-#!/bin/bash
-# Atualizar pacotes
-apt-get update -y
-
-# Instalar pacotes necessários
-apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-
-# Instalar Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-
-# Adicionar usuário atual ao grupo docker
-usermod -aG docker ubuntu
-
-# Iniciar o Docker
-systemctl start docker
-systemctl enable docker
-```
-
-### 2. **Configurar o Banco de Dados MySQL no AWS RDS**
-
-1. Acesse o console do AWS RDS e crie uma nova instância de banco de dados MySQL.
-2. Defina as credenciais de acesso (usuário, senha, etc.).
-3. Crie uma VPC e uma sub-rede que o RDS estará utilizando. A instância EC2 e o RDS precisam estar na mesma VPC.
-4. Conecte-se ao banco de dados do WordPress utilizando o endpoint fornecido pelo RDS.
-
-### 3. **Configurar o EFS (Elastic File System)**
-
-1. Crie um EFS no console da AWS.
-2. Monte o EFS nas instâncias EC2. Você pode montar o EFS diretamente no caminho `/var/www/html` (onde o WordPress armazena os arquivos estáticos).
-
-Para montar o EFS:
-
-```bash
-# Instalar cliente NFS
-apt-get install -y nfs-common
-
-# Criar diretório para montagem
-mkdir -p /mnt/efs
-
-# Montar o EFS (substitua pelo ID do seu EFS)
-mount -t nfs4 -o nfsvers=4.1 <EFS-DNS-NAME>:/ /mnt/efs
-
-# Montar automaticamente na inicialização
-echo "<EFS-DNS-NAME>:/ /mnt/efs nfs4 defaults,_netdev 0 0" >> /etc/fstab
 ```
 # 4. Configuração do Serviço de Load Balancer AWS para WordPress
 
@@ -262,6 +209,8 @@ echo "<EFS-DNS-NAME>:/ /mnt/efs nfs4 defaults,_netdev 0 0" >> /etc/fstab
    - Acesse: `http://<DNS_DO_LOAD_BALANCER>`
 
 ---
+
+
 
 
 ![loadbalencer](https://github.com/user-attachments/assets/1276c919-24dd-423f-83ed-dd48cdad30cd)
