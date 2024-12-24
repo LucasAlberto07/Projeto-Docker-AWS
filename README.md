@@ -43,41 +43,68 @@ Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd
 
 ![vpc subnetes ](https://github.com/user-attachments/assets/aa3df51c-1ddd-4616-88a7-12c89e72a21c)
 
-2º PASSO - Grupos de Segurança 
-Criar 4 grupos de seguranças (EC2/RDS/LOAD/EFS)
+2º PASSO -# 2º PASSO - Configuração dos Grupos de Segurança 🔐
 
-Para o EC2:
-Entrada
+## Introdução
+Para garantir a segurança da infraestrutura, é necessário criar **4 Grupos de Segurança** específicos para os serviços **EC2**, **RDS**, **EFS** e **Load Balancer**.
 
-Tipo	Protocolo	Porta	Tipo de Origem
-HTTP	TCP	80	Grupo de Segurança do Load Balancer
-SSH	TCP	22	IP
-Saída
+---
 
-Tipo	Protocolo	Porta	Tipo de Origem
-Todo tráfego	Todos	Tudo	0.0.0.0/0
-MySQL/Aurora	TCP	2206	Grupo de Segurança da RDS
-NFS	TCP	2049	Grupo de Segurança da EFS
-Para o RDS MySql:
-Entrada
+## 1. Grupo de Segurança: EC2
+### **Regras de Entrada**
+| Tipo            | Protocolo | Porta | Origem                                  |
+|------------------|-----------|-------|-----------------------------------------|
+| HTTP            | TCP       | 80    | Grupo de Segurança do Load Balancer     |
+| SSH             | TCP       | 22    | IP específico                           |
 
-Tipo	Protocolo	Porta	Tipo de Origem
-MySql/Aurora	TCP	3306	Grupo de Segurança da EC2
-Para o EFS:
-Entrada
+### **Regras de Saída**
+| Tipo            | Protocolo | Porta | Destino                                 |
+|------------------|-----------|-------|-----------------------------------------|
+| Todo tráfego    | Todos     | Tudo  | 0.0.0.0/0                               |
+| MySQL/Aurora    | TCP       | 3306  | Grupo de Segurança do RDS               |
+| NFS             | TCP       | 2049  | Grupo de Segurança do EFS               |
 
-Tipo	Protocolo	Porta	Tipo de Origem
-NFS	TCP	2049	Grupo de Segurança da EC2
-Para o LoadBalancer:
-Entrada
+---
 
-Tipo	Protocolo	Porta	Tipo de Origem
-HTTP	TCP	80	0.0.0.0/0
-Saída
+## 2. Grupo de Segurança: RDS
+### **Regras de Entrada**
+| Tipo            | Protocolo | Porta | Origem                                  |
+|------------------|-----------|-------|-----------------------------------------|
+| MySQL/Aurora    | TCP       | 3306  | Grupo de Segurança da EC2               |
 
-Tipo	Protocolo	Porta	Tipo de Origem
-Todo tráfego	TCP	Tudo	0.0.0.0/0
-HTTP	TCP	80	Grupo de Segurança da EC2
+---
+
+## 3. Grupo de Segurança: EFS
+### **Regras de Entrada**
+| Tipo            | Protocolo | Porta | Origem                                  |
+|------------------|-----------|-------|-----------------------------------------|
+| NFS             | TCP       | 2049  | Grupo de Segurança da EC2               |
+
+---
+
+## 4. Grupo de Segurança: Load Balancer
+### **Regras de Entrada**
+| Tipo            | Protocolo | Porta | Origem                                  |
+|------------------|-----------|-------|-----------------------------------------|
+| HTTP            | TCP       | 80    | 0.0.0.0/0                               |
+
+### **Regras de Saída**
+| Tipo            | Protocolo | Porta | Destino                                 |
+|------------------|-----------|-------|-----------------------------------------|
+| Todo tráfego    | Todos     | Tudo  | 0.0.0.0/0                               |
+| HTTP            | TCP       | 80    | Grupo de Segurança da EC2               |
+
+---
+
+## Observações
+- Certifique-se de associar corretamente os grupos de segurança aos seus respectivos serviços no momento da configuração.
+- As permissões para SSH devem ser restritas a endereços IP específicos para maior segurança.
+- O uso de **Grupos de Segurança** garante que o tráfego seja controlado de forma granular, seguindo as melhores práticas de segurança na AWS.
+
+---
+
+Essa configuração estabelece regras claras e seguras para o tráfego de entrada e saída dos serviços da infraestrutura. 🚀
+
 
 # 3º PASSO: Iniciar a Criação da RDS
 
