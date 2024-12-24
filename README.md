@@ -37,6 +37,41 @@ Este repositório contém os passos necessários para configurar uma aplicação
 
 ![vpc subnetes ](https://github.com/user-attachments/assets/aa3df51c-1ddd-4616-88a7-12c89e72a21c)
 
+2º PASSO - Grupos de Segurança 
+Criar 4 grupos de seguranças (EC2/RDS/LOAD/EFS)
+
+Para o EC2:
+Entrada
+
+Tipo	Protocolo	Porta	Tipo de Origem
+HTTP	TCP	80	Grupo de Segurança do Load Balancer
+SSH	TCP	22	IP
+Saída
+
+Tipo	Protocolo	Porta	Tipo de Origem
+Todo tráfego	Todos	Tudo	0.0.0.0/0
+MySQL/Aurora	TCP	2206	Grupo de Segurança da RDS
+NFS	TCP	2049	Grupo de Segurança da EFS
+Para o RDS MySql:
+Entrada
+
+Tipo	Protocolo	Porta	Tipo de Origem
+MySql/Aurora	TCP	3306	Grupo de Segurança da EC2
+Para o EFS:
+Entrada
+
+Tipo	Protocolo	Porta	Tipo de Origem
+NFS	TCP	2049	Grupo de Segurança da EC2
+Para o LoadBalancer:
+Entrada
+
+Tipo	Protocolo	Porta	Tipo de Origem
+HTTP	TCP	80	0.0.0.0/0
+Saída
+
+Tipo	Protocolo	Porta	Tipo de Origem
+Todo tráfego	TCP	Tudo	0.0.0.0/0
+HTTP	TCP	80	Grupo de Segurança da EC2
 
 
 ## **Passo a Passo para Configuração**
