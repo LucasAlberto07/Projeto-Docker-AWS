@@ -73,9 +73,27 @@
 
 <br>
 
-![Capturar](https://github.com/user-attachments/assets/5ca425b3-8c10-4032-aae2-cc34ec6155d3)
+### **➡️ Clicar em (VPC and More)**
 
+<br>
 
+![Capturar](https://github.com/user-attachments/assets/ef795485-aae6-4f0f-86eb-e8940b66cecb)
+
+<br>
+
+### **➡️ Colocar o nome desejado que quiser**
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/4411578b-d142-4909-81a4-0543c485623b)
+
+<br>
+
+### **➡️ Deixar este CIDR Block**
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/c3e1fc50-364d-4168-ae82-0b185192f0ff)
 
 
 1º PASSO - CRIAÇÃO DA VPC 
