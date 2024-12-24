@@ -69,6 +69,13 @@
 
 <br>
 
+<div style="border: 1px solid #ffa500; background-color: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px;">
+    ⚠️ <strong>Atenção ao criar VPC :</strong> Mudar somente o que foi informado abaixo, se não tiver, seguir deixando (PADRÃO) como está.
+</div>
+
+<br>
+<br>
+
 ![Capturar](https://github.com/user-attachments/assets/56888482-c7dd-427f-bb3e-1826e14a3238)
 
 <br>
@@ -94,6 +101,14 @@
 <br>
 
 ![Capturar](https://github.com/user-attachments/assets/c3e1fc50-364d-4168-ae82-0b185192f0ff)
+
+<br>
+
+### **➡️ Vamos aproveitar que estamos criando a VPC e vamos subir junto (1) um Gateway Nat**
+
+<br>
+
+![Capturar](https://github.com/user-attachments/assets/50b9e174-7533-48a6-9775-0aee0d97f086)
 
 
 1º PASSO - CRIAÇÃO DA VPC 
