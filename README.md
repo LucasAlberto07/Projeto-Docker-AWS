@@ -17,7 +17,8 @@ Este repositório contém os passos necessários para configurar uma aplicação
 
 ## **Estrutura do Projeto**
 
-```
+``` ![estrutura](https://github.com/user-attachments/assets/b526dedb-c2b7-44e7-9adb-7e6b11f5e19f)
+
 .
 ├── docker-compose.yml       # Arquivo de configuração do Docker Compose
 ├── Dockerfile               # Arquivo de configuração do Docker (se necessário)
