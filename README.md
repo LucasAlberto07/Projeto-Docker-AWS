@@ -6,14 +6,13 @@ Este repositório contém os passos necessários para configurar uma aplicação
 
 ## **Requisitos**
 
-- **AWS EC2** (Instância configurada com Ubuntu) etapa atual ⏲️
-- **AWS RDS** (Banco de dados MySQL) ❌
-- **AWS EFS** (Elastic File System)  ❌
+- **AWS EC2** (Instância configurada com Ubuntu) 
+- **AWS RDS** (Banco de dados MySQL) 
+- **AWS EFS** (Elastic File System)  
 - **AWS Load Balancer**
 - **Docker** ou **Containerd** (Dependendo da escolha)
-- **Git** (para versionamento de código) 
-- **Script `user_data.sh`** (para automação da inicialização da instância EC2) ❌
-- **WordPress** (Aplicação que será implantada no container) ❌
+- **Script `user_data.sh`** (para automação da inicialização da instância EC2) 
+- **WordPress** (Aplicação que será implantada no container) 
 
 ## **Estrutura do Projeto**
 
@@ -132,11 +131,6 @@ networks:
 1. Após concluir a configuração do Docker/Containerd, RDS, EFS e Load Balancer, execute o comando `docker-compose up` para iniciar o WordPress.
 2. Abra o navegador e acesse o Load Balancer (não use IP público) para verificar se a aplicação WordPress está funcionando corretamente.
 3. O WordPress deve ser acessado na porta 80 ou 8080 via Load Balancer. A tela de login do WordPress aparecerá.
-
-
-### 7. **Documentação**
-
-Crie um arquivo README.md detalhado, como este, para documentar todos os passos e configurações realizadas.
 
 ---
 
