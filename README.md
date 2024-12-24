@@ -133,7 +133,11 @@
 <br>
 <br>
 
-### **3 - Agora que criamos e finalizamos a VPC com sucesso agora precisamos criar nossos security groups :**
+### **<img src="https://seeklogo.com/images/A/amazon-elastic-file-system-logo-E7053CDC9F-seeklogo.com.png" alt="AWS EFS" width="20"/> 3 - Agora antes de criarmos nossos security groups, vamos rápidamente criar o nosso EFS :**
+- 
+
+
+### **4 - Agora que criamos e finalizamos a VPC com sucesso agora precisamos criar nossos security groups :**
 
 <br>
 
@@ -187,7 +191,9 @@
 
 ![Capturar](https://github.com/user-attachments/assets/bdf6e973-9d1f-4286-8d84-9a0ca43a3570)
 
+<br>
 
+![Capturar](https://github.com/user-attachments/assets/9f97d247-3b25-492f-9248-7aa5600266dd)
 
 
 
