@@ -43,68 +43,50 @@ Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd
 
 ![vpc subnetes ](https://github.com/user-attachments/assets/aa3df51c-1ddd-4616-88a7-12c89e72a21c)
 
-2º PASSO -# 2º PASSO - Configuração dos Grupos de Segurança 🔐
+2 º PASSO
+Para o EC2:
+# Configuração de Grupos de Segurança 🔐
 
 ## Introdução
-Para garantir a segurança da infraestrutura, é necessário criar **4 Grupos de Segurança** específicos para os serviços **EC2**, **RDS**, **EFS** e **Load Balancer**.
+Os Grupos de Segurança são usados para controlar o tráfego de rede que entra e sai dos recursos da AWS. Abaixo estão as configurações de **Grupo Público** e **Grupo Privado** necessários para a infraestrutura.
 
 ---
 
-## 1. Grupo de Segurança: EC2
+## Grupo Público
+Este grupo controla o tráfego de entrada para recursos públicos e permite tráfego de saída irrestrito.
+
 ### **Regras de Entrada**
-| Tipo            | Protocolo | Porta | Origem                                  |
-|------------------|-----------|-------|-----------------------------------------|
-| HTTP            | TCP       | 80    | Grupo de Segurança do Load Balancer     |
-| SSH             | TCP       | 22    | IP específico                           |
+| Tipo       | Protocolo | Porta | Origem       |
+|------------|-----------|-------|--------------|
+| Entrada    | TCP       | 80    | 0.0.0.0/0    |
+| Entrada    | TCP       | 443   | 0.0.0.0/0    |
+| Entrada    | TCP       | 22    | 0.0.0.0/0    |
 
 ### **Regras de Saída**
-| Tipo            | Protocolo | Porta | Destino                                 |
-|------------------|-----------|-------|-----------------------------------------|
-| Todo tráfego    | Todos     | Tudo  | 0.0.0.0/0                               |
-| MySQL/Aurora    | TCP       | 3306  | Grupo de Segurança do RDS               |
-| NFS             | TCP       | 2049  | Grupo de Segurança do EFS               |
+| Tipo       | Protocolo | Porta | Destino      |
+|------------|-----------|-------|--------------|
+| Saída      | -         | -     | Todo o tráfego permitido |
 
 ---
 
-## 2. Grupo de Segurança: RDS
+## Grupo Privado
+Este grupo controla o tráfego de entrada e saída para recursos privados da infraestrutura, como bancos de dados e sistemas internos.
+
 ### **Regras de Entrada**
-| Tipo            | Protocolo | Porta | Origem                                  |
-|------------------|-----------|-------|-----------------------------------------|
-| MySQL/Aurora    | TCP       | 3306  | Grupo de Segurança da EC2               |
-
----
-
-## 3. Grupo de Segurança: EFS
-### **Regras de Entrada**
-| Tipo            | Protocolo | Porta | Origem                                  |
-|------------------|-----------|-------|-----------------------------------------|
-| NFS             | TCP       | 2049  | Grupo de Segurança da EC2               |
-
----
-
-## 4. Grupo de Segurança: Load Balancer
-### **Regras de Entrada**
-| Tipo            | Protocolo | Porta | Origem                                  |
-|------------------|-----------|-------|-----------------------------------------|
-| HTTP            | TCP       | 80    | 0.0.0.0/0                               |
+| Tipo       | Protocolo | Porta | Origem       |
+|------------|-----------|-------|--------------|
+| Entrada    | TCP       | 3306  | 0.0.0.0/0    |
+| Entrada    | TCP       | 22    | 0.0.0.0/0    |
+| Entrada    | TCP       | 2049  | 0.0.0.0/0    |
+| Entrada    | TCP       | 443   | Grupo Público |
+| Entrada    | TCP       | 80    | Grupo Público |
 
 ### **Regras de Saída**
-| Tipo            | Protocolo | Porta | Destino                                 |
-|------------------|-----------|-------|-----------------------------------------|
-| Todo tráfego    | Todos     | Tudo  | 0.0.0.0/0                               |
-| HTTP            | TCP       | 80    | Grupo de Segurança da EC2               |
+| Tipo       | Protocolo | Porta | Destino      |
+|------------|-----------|-------|--------------|
+| Saída      | -         | -     | Todo o tráfego permitido |
 
 ---
-
-## Observações
-- Certifique-se de associar corretamente os grupos de segurança aos seus respectivos serviços no momento da configuração.
-- As permissões para SSH devem ser restritas a endereços IP específicos para maior segurança.
-- O uso de **Grupos de Segurança** garante que o tráfego seja controlado de forma granular, seguindo as melhores práticas de segurança na AWS.
-
----
-
-Essa configuração estabelece regras claras e seguras para o tráfego de entrada e saída dos serviços da infraestrutura. 🚀
-
 
 # 3º PASSO: Iniciar a Criação da RDS
 
