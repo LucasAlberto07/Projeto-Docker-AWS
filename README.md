@@ -39,12 +39,20 @@
 ### **Acessar sua conta da AWS (Se não tiver conta, criar conta) :**
 
 ![Capturar](https://github.com/user-attachments/assets/09a2e88b-c3ba-4b29-843a-67856165edcf)
+
 <p>
-    <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="40"/>
-    <a href="https://aws.amazon.com/ec2/" target="_blank" style="text-decoration: none; color: inherit;">
-        **AWS EC2** (Instância configurada com Ubuntu)
+    <a href="https://us-east-2.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=j2zjHrNfWOzFRccugZMeGP7GVoV-z8vQ3VHeb6g0LM0&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-2_9c1e7907d450bff9" target="_blank" style="text-decoration: none; color: inherit;">
+        <img src="https://cdn.icon-icons.com/icons2/2407/PNG/512/aws_icon_146074.png" alt="AWS EC2" width="40"/>
+        Acessar sua conta clicando aqui
     </a>
 </p>
+<p>
+    <a href="https://us-east-2.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=j2zjHrNfWOzFRccugZMeGP7GVoV-z8vQ3VHeb6g0LM0&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-2_9c1e7907d450bff9" target="_blank" style="text-decoration: none; color: inherit;">
+        <img src="https://cdn.icon-icons.com/icons2/2407/PNG/512/aws_icon_146074.png" alt="AWS EC2" width="40"/>
+        Criar nova conta clicando aqui
+    </a>
+</p>
+
 
 
 
