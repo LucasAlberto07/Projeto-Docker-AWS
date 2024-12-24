@@ -2,24 +2,27 @@
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/f/f3/LogoCompasso-positivo.png) 
  
-<img src="https://i.ytimg.com/vi/_nU4OrQ68Us/maxresdefault.jpg" width="500" height="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<img src="https://i.ytimg.com/vi/_nU4OrQ68Us/maxresdefault.jpg" 
+     width="500" 
+     style="display: block; margin: 0 auto;" 
+     alt="Descrição da Imagem" />
 
 <br>
 
 <p> Aqui será seu guia para implantar WordPress em EC2 utilizando Docker/Containerd, integrando RDS (MySQL), EFS para armazenamento estático, e configurando Auto Scaling e Load Balancer para balanceamento de carga. </p>
 
-![alt text](https://miro.medium.com/v2/resize:fit:1050/0*oc9th8iluu3mmc8T.png)
-
+![68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a313035302f302a6f6339746838696c7575336d6d6338542e706e67](https://github.com/user-attachments/assets/f807b228-4285-4ee4-9375-6647f78aed46)
 
 ## **Requisitos**
 
-- **AWS EC2** (Instância configurada com Ubuntu) 
-- **AWS RDS** (Banco de dados MySQL) 
-- **AWS EFS** (Elastic File System)  
-- **AWS Load Balancer**
-- **Docker** ou **Containerd** (Dependendo da escolha)
-- **Script `user_data.sh`** (para automação da inicialização da instância EC2) 
-- **WordPress** (Aplicação que será implantada no container) 
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/aws.svg" alt="AWS" width="20"/> **AWS EC2** (Instância configurada com Ubuntu)
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/aws.svg" alt="AWS" width="20"/> **AWS RDS** (Banco de dados MySQL)
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/aws.svg" alt="AWS" width="20"/> **AWS EFS** (Elastic File System)
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/aws.svg" alt="AWS" width="20"/> **AWS Load Balancer**
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/docker.svg" alt="Docker" width="20"/> **Docker** ou <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/containerd.svg" alt="Containerd" width="20"/> **Containerd** (Dependendo da escolha)
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/gnubash.svg" alt="Bash" width="20"/> **Script `user_data.sh`** (para automação da inicialização da instância EC2)
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/wordpress.svg" alt="WordPress" width="20"/> **WordPress** (Aplicação que será implantada no container)
+
 
 
 
