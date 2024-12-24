@@ -29,6 +29,15 @@ Este repositório contém os passos necessários para configurar uma aplicação
 ├── README.md               # Documentação do projeto
 └── wordpress/               # Código do WordPress ou repositório do WordPress
 ```
+1º PASSO - CRIAÇÃO DA VPC 
+- Criar VPC e suas Sub-Redes (2 Publicas e 2 Privadas)
+  Instalar as sub-redes em Gateways
+
+- Criar tabelas de rotas e associar as sub-redes
+
+![vpc subnetes ](https://github.com/user-attachments/assets/aa3df51c-1ddd-4616-88a7-12c89e72a21c)
+
+
 
 ## **Passo a Passo para Configuração**
 
