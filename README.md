@@ -33,32 +33,32 @@
 <br>
 
 <h2><strong>Tecnologias utilizadas no laboratório</strong></h2>
-<div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
-  <div style="text-align: center; margin: 10px;">
+<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; overflow-x: auto;">
+  <div style="text-align: center; margin: 0 20px;">
     <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="50">
     <p><strong>AWS EC2</strong></p>
   </div>
-  <div style="text-align: center; margin: 10px;">
+  <div style="text-align: center; margin: 0 20px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="50">
     <p><strong>AWS RDS</strong></p>
   </div>
-  <div style="text-align: center; margin: 10px;">
+  <div style="text-align: center; margin: 0 20px;">
     <img src="https://seeklogo.com/images/A/amazon-elastic-file-system-logo-E7053CDC9F-seeklogo.com.png" alt="AWS EFS" width="50">
     <p><strong>AWS EFS</strong></p>
   </div>
-  <div style="text-align: center; margin: 10px;">
+  <div style="text-align: center; margin: 0 20px;">
     <img src="https://github.com/user-attachments/assets/4877e7d9-1167-47be-8527-f9c10427da9c" alt="AWS Load Balancer" width="50">
     <p><strong>AWS Load Balancer</strong></p>
   </div>
-  <div style="text-align: center; margin: 10px;">
+  <div style="text-align: center; margin: 0 20px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="50">
     <p><strong>Docker</strong></p>
   </div>
-  <div style="text-align: center; margin: 10px;">
+  <div style="text-align: center; margin: 0 20px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="50">
     <p><strong>Script user_data.sh</strong></p>
   </div>
-  <div style="text-align: center; margin: 10px;">
+  <div style="text-align: center; margin: 0 20px;">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" width="50">
     <p><strong>WordPress</strong></p>
   </div>
