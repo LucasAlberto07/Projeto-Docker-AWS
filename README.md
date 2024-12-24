@@ -1,4 +1,4 @@
-# Projeto UOL Compass 
+# Projeto UOL Compass Wordpress EC2 (private) + Load Balancer
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/f/f3/LogoCompasso-positivo.png) 
  
