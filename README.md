@@ -32,39 +32,26 @@
 <br>
 <br>
 
-<h2><strong>Tecnologias utilizadas no laboratório</strong></h2>
-<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; overflow-x: auto;">
-  <div style="text-align: center; margin: 0 20px;">
-    <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="50">
-    <p><strong>AWS EC2</strong></p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="50">
-    <p><strong>AWS RDS</strong></p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
-    <img src="https://seeklogo.com/images/A/amazon-elastic-file-system-logo-E7053CDC9F-seeklogo.com.png" alt="AWS EFS" width="50">
-    <p><strong>AWS EFS</strong></p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
-    <img src="https://github.com/user-attachments/assets/4877e7d9-1167-47be-8527-f9c10427da9c" alt="AWS Load Balancer" width="50">
-    <p><strong>AWS Load Balancer</strong></p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="50">
-    <p><strong>Docker</strong></p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="50">
-    <p><strong>Script user_data.sh</strong></p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" width="50">
-    <p><strong>WordPress</strong></p>
-  </div>
-</div>
+## **Aplicando Laboratório (Vamos iniciar?)**
+
+<br>
+
+### **Acessar sua conta da AWS (Se não tiver conta, criar conta) :**
+
+![Capturar](https://github.com/user-attachments/assets/09a2e88b-c3ba-4b29-843a-67856165edcf)
+<p>
+    <img src="https://github.com/user-attachments/assets/4d1a8414-cdf7-437a-8385-b6b43cbe92ae" alt="AWS EC2" width="40"/>
+    <a href="https://aws.amazon.com/ec2/" target="_blank" style="text-decoration: none; color: inherit;">
+        **AWS EC2** (Instância configurada com Ubuntu)
+    </a>
+</p>
 
 
+
+### **Criar VPC :**
+
+
+<p></p>
 
 1º PASSO - CRIAÇÃO DA VPC 
 - Criar VPC e suas Sub-Redes (2 Publicas e 2 Privadas)
