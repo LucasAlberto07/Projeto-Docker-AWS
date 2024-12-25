@@ -226,7 +226,7 @@
 
 
 
- # **4 - Criação da RDS :**
+ # **5 - Criação da RDS :**
 
 ## 1. Criar o Banco de Dados
 1. No painel do RDS, clique em **"Create database"**.
@@ -290,29 +290,55 @@ Você pode usar o script `user_data.sh` para automatizar a instalação do Docke
 #### Exemplo de script `user_data.sh`:
 
 ```bash
-#!/bin/bash
-# Atualizar pacotes
-apt-get update -y
+#!/bin/bash 
+ 
+# Atualização do sistema e instalação do Docker
+sudo yum update -y 
+sudo yum install docker -y
 
-# Instalar pacotes necessários
-apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+# Inicialização e configuração do Docker
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker ec2-user
+newgrp docker
 
-# Instalar Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
+# Instalação do Docker Compose
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
-# Adicionar usuário atual ao grupo docker
-usermod -aG docker ubuntu
+# Criação do diretório para o projeto WordPress
+sudo mkdir -p /home/ec2-user/wordpress
 
-# Iniciar o Docker
-systemctl start docker
-systemctl enable docker
+# Criação do arquivo docker-compose.yml
+cat <<EOF > /home/ec2-user/wordpress/docker-compose.yml
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: database-1.chc4e66surqu.us-east-1.rds.amazonaws.com:3306
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: 12345678lucas
+      WORDPRESS_DB_NAME: bancoaws
+    volumes:
+      - /mnt/efs:/var/www/html
+EOF
+
+# Criação do diretório e montagem do EFS
+sudo mkdir -p /mnt/efs
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-034132b3f8de6bd56.efs.us-east-1.amazonaws.com:/ /mnt/efs
+
+# Execução do Docker Compose
+docker-compose -f /home/ec2-user/wordpress/docker-compose.yml up -d
+
 ```
 
 <br>
 
 
-# 4. Configuração do Serviço de Load Balancer AWS para WordPress
+# 6. Configuração do Serviço de Load Balancer AWS para WordPress
 
 ## 1. Criar o Load Balancer
 1. Acesse o painel **EC2** no console AWS.
