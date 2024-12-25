@@ -404,7 +404,24 @@ Agora o **WordPress** está configurado com um Load Balancer, garantindo alta di
 1. Acesse o painel da AWS e vá para o serviço **Auto Scaling**.
 
 - **Criação do Auto Scaling Group**:  
-  - Escolha um nome para o Auto Scaling Group.  
-  - Vincule a uma Launch Configuration ou Launch Template existente.  
-  - Defina as capacidades inicial, mínima e máxima de instâncias.  
-  - Associe o grupo a um Load Balancer já configurado (opcional).
+- Escolha um nome para o Auto Scaling Group.  
+- Vincule a uma Launch Configuration ou Launch Template existente.  
+- Defina as capacidades inicial, mínima e máxima de instâncias.  
+- Associe o grupo a um Load Balancer já configurado (opcional).
+
+<br>
+
+## Etapa 9: Fazendo loguin no WordPress
+
+- Copie o DNS do Load Balancer e cole no navegador para acessar o painel de configuração do WordPress.
+
+ ![loadbalencer](https://github.com/user-attachments/assets/2325bfe7-409a-4153-b2af-675ef64ef4c8)
+
+  <br>
+
+- ✅ Apois isso acesse com seu user name, e senha criadas, na configuração do seu RDS.
+
+  ![wordprees](https://github.com/user-attachments/assets/fd003582-0fde-40cf-b3bb-a960cad825b0)
+
+
+  
