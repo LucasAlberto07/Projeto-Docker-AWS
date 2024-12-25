@@ -399,3 +399,12 @@ Agora o **WordPress** está configurado com um Load Balancer, garantindo alta di
 
 ---
 
+### **Passo 7: Configurar Auto Scaling**
+
+1. Acesse o painel da AWS e vá para o serviço **Auto Scaling**.
+
+- **Criação do Auto Scaling Group**:  
+  - Escolha um nome para o Auto Scaling Group.  
+  - Vincule a uma Launch Configuration ou Launch Template existente.  
+  - Defina as capacidades inicial, mínima e máxima de instâncias.  
+  - Associe o grupo a um Load Balancer já configurado (opcional).
