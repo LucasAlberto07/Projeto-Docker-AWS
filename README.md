@@ -226,13 +226,20 @@
 
 
 
- # **5 - Criação da RDS :**
+ # **5 - Criação da RDS:**
 
 ## 1. Criar o Banco de Dados
 1. No painel do RDS, clique em **"Create database"**.
+
+![database](https://github.com/user-attachments/assets/af966917-9685-426e-ad6b-06323cfe9882)
+
+<br>
+
 2. Escolha as configurações de banco de dados:
    - **Engine options**: Escolha **MySQL** (ou outro banco disponível no Free Tier, como PostgreSQL).
    - **Templates**: Selecione **Free tier**.
+
+  ![my sql](https://github.com/user-attachments/assets/2d25f9cd-7a4d-4042-86aa-f991f0fccb63)
 
 ---
 
@@ -242,8 +249,18 @@
 - **Master username**: Escolha um nome de usuário (ex.: `admin`).
 - **Master password**: Defina uma senha forte e confirme.
 
+![user name ](https://github.com/user-attachments/assets/23f75ba9-04b0-4034-81d8-5405c339dc35)
+
+<br>
+
+![passowrd](https://github.com/user-attachments/assets/b4bc028f-79d3-476d-b20d-b77aff7bdd5d)
+
+
 ### **DB Instance Size**
 - Escolha a classe de instância: **db.t2.micro** ou **db.t3.micro** (ambas gratuitas no Free Tier).
+
+![image](https://github.com/user-attachments/assets/8dd2deb2-e0dc-4007-bae8-2b21f118ec30)
+
 
 ### **Storage**
 - **Tipo de armazenamento**: General Purpose (SSD).
@@ -253,16 +270,24 @@
 
 ## 3. Configurações de Conectividade
 ### **Virtual Private Cloud (VPC)**
-- Escolha a VPC padrão ou configure uma VPC específica.
+- Escolha a VPC que foi criada nos primeiros passos lá atrás
+
+- ![image](https://github.com/user-attachments/assets/e1aa96bf-e995-428b-9ee7-c2452820ec31)
+
 
 ### **Subnet Group**
-- Use um grupo de sub-rede existente ou crie um novo.
+- Utilize o grupo de sub-rede existente que criamos.
+
+ ![image](https://github.com/user-attachments/assets/b27b69fe-2f91-4362-9450-6d3d7a10f161)
+
 
 ### **Public Access**
 - Marque **Yes** se deseja que o banco seja acessado publicamente (recomendado apenas para testes).
 
 ### **VPC Security Group**
-- Configure ou selecione um **Security Group** para permitir acesso na porta **3306**.
+- Selecione um **Security Group** nesse projeto escolhemos o security group privado que criamos, para andar conforme as boas praticas.
+
+![image](https://github.com/user-attachments/assets/3adc5244-b946-4592-a6dc-3f8d2386d9f3)
 
 ---
 
@@ -286,6 +311,19 @@ Agora, sua instância RDS está pronta e configurada para uso no Free Tier. 🚀
 ### 1. **Instalar e Configurar o Docker/Containerd na Instância EC2**
 
 Você pode usar o script `user_data.sh` para automatizar a instalação do Docker ou Containerd ao iniciar a instância EC2.
+
+- Criar Duas EC2 (Instancia)
+
+- Configurações na criação do modelo de execução (ec2)
+  Imagem = Amazon Linux 2
+
+- Tipo = t2.micro
+
+- VPC = criada anteriormente
+
+- Sub-Rede = Privadas criada anteriormente
+
+- grupo de segurança = grupo EC2 criado anteriormente
 
 #### Exemplo de script `user_data.sh`:
 
@@ -337,13 +375,51 @@ docker-compose -f /home/ec2-user/wordpress/docker-compose.yml up -d
 
 <br>
 
+**Durante a criação da instância EC2 no console AWS*:
+
+<br>
+
+- ❗ Na etapa Configurar Detalhes da Instância, localize a seção Advanced Details.
+
+![image](https://github.com/user-attachments/assets/1f27e445-30f2-4e67-adb4-62d7eeab9d4d)
+
+<br>
+
+Role até o final da página e cole o script no campo User data.
+
+![image](https://github.com/user-attachments/assets/3d7a8c7f-9a90-4a70-ac85-86786d621f4a)
+
+<br>
+
+certifique-se de que a VPC, sub-rede e grupo de segurança configurados anteriormente estão devidamente associados à instância.
+
+Após a inicialização, você pode verificar se o script foi executado corretamente acessando os logs
+
+
+
+
+<br>
+
 
 # 6. Configuração do Serviço de Load Balancer AWS para WordPress
 
 ## 1. Criar o Load Balancer
 1. Acesse o painel **EC2** no console AWS.
-2. No menu lateral, clique em **"Load Balancers"** e depois em **"Create Load Balancer"**.
+
+![image](https://github.com/user-attachments/assets/c3157be8-896f-4c99-a72e-13370ddafe14)
+
+<br>
+
+3. No menu lateral, clique em **"Load Balancers"** e depois em **"Create Load Balancer"**.
+
+![image](https://github.com/user-attachments/assets/9c320f8f-6177-408e-a35d-a1a0ea95510a)
+
+<br>
+<br>
+
 3. Escolha o tipo **Classic Load Balancer**.
+   
+![image](https://github.com/user-attachments/assets/7b1d1aa4-e672-4ad8-b02d-1bfe95499a06)
 
 ---
 
@@ -352,8 +428,12 @@ docker-compose -f /home/ec2-user/wordpress/docker-compose.yml up -d
 2. **Scheme**: Escolha **"Internet-facing"** (voltado para a Internet).
 3. **Network**:
    - **VPC**: Selecione a VPC configurada anteriormente.
+   
+   - ![image](https://github.com/user-attachments/assets/36e5081a-5ba8-40ee-9395-76d7a6db8d5d)
+
+    <br>
+    
    - **Subnets**: Escolha as sub-redes públicas.
-4. **Listeners**:
    - Configure uma regra de escuta para HTTP na porta **80**.
 
 ---
@@ -362,6 +442,8 @@ docker-compose -f /home/ec2-user/wordpress/docker-compose.yml up -d
 1. Associe o **Security Group** do Load Balancer.
    - **Entrada**: Permita HTTP (porta 80) de **0.0.0.0/0**.
    - **Saída**: Permita HTTP para o **Security Group da EC2**.
+
+![image](https://github.com/user-attachments/assets/034b974e-ba58-4538-986f-722dbd010278)
 
 ---
 
